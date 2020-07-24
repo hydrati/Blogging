@@ -29,7 +29,7 @@
         content: settings.content.preview,
     };
     if (getpar("debug")) {
-        document.all[0].innerHTML = JSON.stringify(debugtext);
+        document.all[0].innerHTML = "<pre>"+JSON.stringify(debugtext)+"<pre>";
         console.log("Debug ON");
     } else {
         document.getElementById("content").innerHTML = settings.content.preview.mdcontent;
