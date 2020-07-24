@@ -33,7 +33,7 @@
         content: settings.content.preview,
     };
     if (getpar("debug")) {
-        document.all[0].innerHTML = "<pre>"+JSON.stringify(debugtext)+"<pre>";
+        document.all[0].innerHTML = "<pre><xmp>"+JSON.stringify(debugtext)+"</xmp></pre>";
         console.log("Debug ON");
     } else {
         document.getElementById("back").href = settings.domain;
