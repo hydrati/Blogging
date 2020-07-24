@@ -35,7 +35,6 @@ fetch("config.json")
             document.all[0].innerHTML =
                 "<h1>Error fetch config.json<br>Status Code=" + res.status + "</h1>";
             console.log(res.status);
-            debugger;
         }
     })
     .then((res) => res.json())
@@ -85,11 +84,13 @@ fetch("config.json")
                 })
                 .catch(function (t) {
                     settings.content.preview.mdcontent = t.message;
-                    return t.message;
                     document.write(t.message);
+                    return t.message;
                 });
         } else if (settings.par === "p") {
-            settings.content = { url: decodeURIComponent(settings.post+getpar(settings.par)+".md") };
+            settings.content = {
+                url: decodeURIComponent(settings.post + getpar(settings.par) + ".md"),
+            };
             fetch(settings.content.url)
                 .then((res) => {
                     settings.content.status = res.status;
@@ -127,8 +128,8 @@ fetch("config.json")
                 })
                 .catch(function (t) {
                     settings.content.preview.mdcontent = t.message;
-                    return t.message;
                     document.write(t.message);
+                    return t.message;
                 });
         }
     });
