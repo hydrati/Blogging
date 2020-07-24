@@ -18,7 +18,12 @@ function getpar(r) {
 }
 if (!getpar("p")) {
     if (!getpar("url")) {
-        window.location.href = window.location.href + "?p=home"; //check if user didn't give a param
+        if (!getpar("page")) {
+            window.location.search = "?page=home"; //check if user didn't give a param
+        }
+        else {
+            var settings = { par : "page" };
+        }
     } else {
         var settings = { par: "url" };
     }
@@ -131,6 +136,34 @@ fetch("config.json")
                     document.write(t.message);
                     return t.message;
                 });
+        } else if (settings.par === "page") {
+            settings.content={url:settings.themeUrl+"html/"+getpar(settings.par)+".html"};
+            fetch(settings.content.url)
+            .then((res) => {
+                settings.content.status = res.status;
+                settings.date = new Date();
+                if (res.status >= 200 && res.status < 300) {
+                    return res;
+                } else {
+                    fetch (settings.themeUrl + "html/" + "404.html")
+                    .then((response) => response.text())
+                    .then(function (text){
+                        settings.content.success = false;
+                        settings.content.preview = {
+                            response: null,
+                            mdcontent: null,
+                        };
+                        document.write(text);
+                    });
+                }
+            }).then((content) => content.text())
+            .then(content =>{
+                settings.content.success = true;
+                settings.content.preview = {
+                    response: content,
+                };
+                document.write(content);
+            });
         }
     });
 console.log(settings);

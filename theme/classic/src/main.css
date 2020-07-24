@@ -106,13 +106,55 @@ code {
   font-family: Sarasa Mono SC,Cascadia Code,Fira Code,Menlo,Consolas,monaco,monospace;
 }
 
-#content {
-  margin: 5% 10%;
-}
-
 #container {
   position: relative;
   height: auto;
+  margin: 5% 10%;
+}
+
+.head *{
+  display: inline;
+  padding: 5%;
+}
+
+.head .h1 {
+  font-size: 40px;
+}
+
+.head .h3 {
+  font-size: 30px;
+}
+
+.intro {
+  display:inline-block;
+  margin-bottom: 4%;
+}
+
+.intro * {
+  vertical-align: middle;
+  display: inline;
+}
+
+.intro span {
+  display:inline-block;
+}
+
+.intro h1 {
+  margin-left: 10px;
+  font-size: 40px;
+  padding:0;
+}
+
+#intro-text-intro {
+  font-size: 25px;
+  color: var(--dark-text-darker);
+}
+
+.intro #avatar {
+  padding: 0%;
+  border-radius: 50px;
+  height: 96px;
+  width: 96px;
 }
 
 img {
@@ -155,11 +197,28 @@ table {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 770px) {
+  .head *{
+    padding: 4%;
+  }
+  .intro {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:700px) {
   h1 {
-    font-size: 35px;
+    font-size: 40px;
   }
   #aboutme {
     font-size: 14px;
+  }
+  
+  .head .display_none{
+    display: none;
+  }
+  .intro h1 {
+    display: block;
   }
 }

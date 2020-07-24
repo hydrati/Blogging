@@ -2,6 +2,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script id="intro_js"></script>
     <div id="head">
         <link rel='shortcut icon' id="favicon" href="favicon.ico">
     </div>
@@ -16,6 +17,11 @@
                 <h1 id="intro-text-intro"></h1>
             </span>
         </span>
+        <ul class="head">
+            <li class="h1"> Home </li>
+            <li class="h3"> Archive </li>
+            <li class="h3 display_none"> About </li>
+        </ul>
         <div id="content">
         </div>
         <footer>
@@ -28,8 +34,6 @@
         </footer>
     </div>
 </body>
-
-<script id="intro_js"></script>
 <script>
     var debugtext = {
         FetchThing: settings.content.url,
@@ -41,17 +45,10 @@
         document.all[0].innerHTML = "<pre><xmp>" + JSON.stringify(debugtext) + "</xmp></pre>";
         console.log("Debug ON");
     } else {
+        document.getElementById("intro_js").src = settings.themeUrl + "src/intro.js"
         document.getElementById("aboutme").innerHTML = "Copyright " + settings.date.getFullYear() + " <a class='hoverlink' href=" + settings.domain + ">" + config.theme_config.author + "'s Blog. </a>All Rights Reserved.";
-        document.getElementById("content").innerHTML = settings.content.preview.mdcontent;
-        try {
-            debugtext.content.title = document.getElementsByTagName("h1")[2].innerHTML;
-            document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main.css'><title> " + document.getElementsByTagName("h1")[2].innerHTML + " -- " + config.theme_config.author + "'s Blog</title>";
-        } catch (e) {
-            document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main.css'><title> " + config.theme_config.author + "'s Blog</title>";
-            console.log(e);
-        }
+        document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main.css'><title> Home -- " + config.theme_config.author + "'s Blog</title>";
     }
-    document.getElementById("intro_js").src = settings.themeUrl + "src/intro.js"
     console.log(debugtext);
 </script>
 
