@@ -1,0 +1,10 @@
+{
+    "theme": "classic",
+    "file": {
+        "post": "post/",
+        "theme": "theme/"
+    },
+    "theme_config": {
+        "author": "186526"
+    }
+}

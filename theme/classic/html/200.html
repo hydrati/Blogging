@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <div id="head">
+        <link rel='shortcut icon' id="favicon" href="favicon.ico">
+    </div>
+</head>
+
+<body>
+    <div id="container">
+        <div id="content">
+        </div>
+        <footer>
+            <span class="siteinfo">
+                <span id="blogginginfo">
+                    Power By <a class="hoverlink" href="https://github.com/186526/blogging">Blogging</a>, What a
+                    Lightweight Blog Platform.</span>
+                <span id="aboutme"> </span>
+            </span>
+        </footer>
+    </div>
+</body>
+<script>
+    var debugtext = {
+        FetchThing: settings.content.url,
+        StatusCode: settings.content.status,
+        success: settings.content.success,
+        content: settings.content.preview,
+    };
+    if (getpar("debug")) {
+        document.all[0].innerHTML = JSON.stringify(debugtext);
+        console.log("Debug ON");
+    } else {
+        document.getElementById("content").innerHTML = settings.content.preview.mdcontent;
+        try {
+        debugtext.content.title = document.getElementsByTagName("h1")[0].innerHTML;
+        document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main.css'><title> " + document.getElementsByTagName("h1")[0].innerHTML + " -- " + config.theme_config.author + "'s Blog</title>";
+        } catch (e) {
+            document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main.css'><title> " + config.theme_config.author + "'s Blog</title>";
+            console.log(e);
+        } finally {
+
+        }
+
+    }
+    console.log(debugtext);
+    document.getElementById("aboutme").innerHTML = "Copyright " + settings.date.getFullYear() + " <a class='hoverlink' href=" + settings.domain + ">" + config.theme_config.author + "'s Blog. </a>All Rights Reserved.";
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<html lang='en'>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <div id='head'>
+    </div>
+</head>
+
+<body bgcolor='white'>
+    <center>
+        <h1>404 Source Not Found</h1>
+    </center>
+    <hr>
+    <center>
+        <p><a id="back">Back to Home</a></p>
+    </center>
+</body>
+<footer>
+    <span class="siteinfo">
+        <span id="blogginginfo">
+            Power By Bloging ,What a Lightweight Blog Platform.
+        </span>
+        <span id="aboutme">
+
+        </span>
+    </span>
+</footer>
+<script>
+    var debugtext = {
+        FetchThing: settings.content.url,
+        StatusCode: settings.content.status,
+        success: settings.content.success,
+        content: settings.content.preview,
+    };
+    if (getpar("debug")) {
+        document.all[0].innerHTML = JSON.stringify(debugtext);
+        console.log("Debug ON");
+    } else {
+        document.getElementById("back").href = settings.domain;
+        //document.getElementById("bugcode").innerHTML = JSON.stringify(debugtext);
+    }
+    console.log(debugtext);
+    document.getElementById("aboutme").innerHTML = "Copyright " + settings.date.getFullYear() + " " + config.theme_config.author + "'s Blog. All Rights Reserved.";
+    document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main.css'><title> 404 Not Found -- "+ config.theme_config.author +"'s Blog</title>"
+</script>
+
+</html>
