@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 * {
   padding: 0;
   margin: 0;
@@ -61,6 +62,11 @@ hr {
   margin: 16px;
 }
 
+table,ol {
+  padding-top: 5%;
+  padding-bottom: 3%;
+}
+
 .siteinfo {
   bottom: -100px;
   position: absolute;
@@ -81,7 +87,7 @@ a {
 }
 
 p,
-ul {
+ul,li {
   font-size: 22px;
 }
 
@@ -106,6 +112,61 @@ code {
   font-family: Sarasa Mono SC,Cascadia Code,Fira Code,Menlo,Consolas,monaco,monospace;
 }
 
+.post-container {
+  margin: 5% 0%;
+  border-radius: 20px;
+  border: 2px solid var(--white-background-darker);
+  background-color: var(--white-background-darker);
+}
+
+.post-container * {
+  padding: 0%;
+  margin: 0%;
+}
+
+.post-container h1 {
+  padding:3% 5%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.post-container p {
+  padding: 3% 5%;
+  color: var(--white-text-darker);
+}
+
+.post-container a{
+  vertical-align: middle;
+}
+
+.post-container i {
+  vertical-align:middle;
+  padding: 0% 1%;
+}
+
+i {
+  vertical-align:middle;
+  padding: 0% 1%;
+}
+
+.post-info *{
+  color: var(--white-text-darker);
+  font-size: 20px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  line-height: 15px;
+}
+
+.arrow_forward::before {
+  content: "arrow_forward";
+}
+
+.arrow_back::before {
+  content: "arrow_back";
+}
+
 #container {
   position: relative;
   height: auto;
@@ -123,6 +184,7 @@ code {
 
 .head .h3 {
   font-size: 30px;
+  white-space:nowrap;
 }
 
 .intro {
@@ -171,6 +233,10 @@ table {
     padding-bottom: 3%;
 }
 
+.none {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: var(--dark-text);
@@ -183,12 +249,19 @@ table {
     border: 2px solid var(--dark-background-darker);
     background-color: var(--dark-background-darker);
   }
+  .post-container {
+    border: 2px solid var(--dark-background-darker);
+    background-color: var(--dark-background-darker);
+  }
   .hoverlink{
-    color: var(--dark-text-darker)
-}
+    color: var(--dark-text-darker);
+  }
+  .post-info *,.post-container p {
+    color: var(--dark-text-darker);
+  }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1150px) {
   #blogginginfo {
     opacity: 0;
   }
@@ -197,7 +270,7 @@ table {
   }
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 790px) {
   .head *{
     padding: 4%;
   }
@@ -220,5 +293,16 @@ table {
   }
   .intro h1 {
     display: block;
+  }
+  .post-container .post-intro {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .head * {
+    padding: 1%;
   }
 }

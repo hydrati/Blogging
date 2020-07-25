@@ -8,5 +8,8 @@
         "author": "186526",
         "avatar": "https://cdn.jsdelivr.net/gh/186526/jsdelivr@master/avatar.jpg",
         "introduction": "啥都不会的屑"
-    }
+    },
+    "post": [
+        {"url": "index","introduction":"Blogging is a simple and light-weight Blog Platform"}
+    ]
 }

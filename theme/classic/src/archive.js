@@ -23,14 +23,10 @@ async function init_post_container() {
             post.preview.intro=config.post[x].introduction;
         })
         .then(function(){
-            post.container = '<div class="post-container"><h1>'+post.preview.title+'</h1><p class="post-intro">'+post.preview.intro+'</p><p><a href="/?p='+config.post[x].url+'">Reading<i class="material-icons arrow_forward"></i></a></p></div>';
+            post.container = '<div class="post-container"><h1>'+post.preview.title+'</h1><div class="post-info">'+post.preview.mdcontent+'</div><p><a href="/?p='+config.post[x].url+'">Reading<i class="material-icons arrow_forward"></i></a></p></div>';
             post_container = post_container+post.container;
         });
     }
     return post_container;
 }
-if (window.location.search==="?page=home"){
-    init_post_container().then(content => {
-        document.getElementById("post").innerHTML = content;
-    });
-}
+init_post_container().then(content => {document.getElementById("post").innerHTML = content;});
