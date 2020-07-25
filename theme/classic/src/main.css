@@ -2,8 +2,8 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "PingFang SC","Sarasa UI SC","Helvetica Neue", "Microsoft YaHei New",
-    STHeiti Light, sans-serif;
+  font-family: "PingFang SC", "Sarasa UI SC", "Helvetica Neue",
+    "Microsoft YaHei New", STHeiti Light, sans-serif;
   --dark-text: #efefef;
   --dark-background: #000;
   --dark-background-darker: #111;
@@ -16,12 +16,12 @@
   line-height: 150%;
 }
 
-.hoverlink:hover{
-    color: var(--highlight)
+.hoverlink:hover {
+  color: var(--highlight);
 }
 
-.hoverlink{
-    color: var(--white-text-darker)
+.hoverlink {
+  color: var(--white-text-darker);
 }
 
 h1 {
@@ -62,7 +62,8 @@ hr {
   margin: 16px;
 }
 
-table,ol {
+table,
+ol {
   padding-top: 5%;
   padding-bottom: 3%;
 }
@@ -87,7 +88,8 @@ a {
 }
 
 p,
-ul,li {
+ul,
+li {
   font-size: 22px;
 }
 
@@ -109,7 +111,8 @@ pre {
 code {
   white-space: pre-wrap;
   overflow: auto;
-  font-family: Sarasa Mono SC,Cascadia Code,Fira Code,Menlo,Consolas,monaco,monospace;
+  font-family: Sarasa Mono SC, Cascadia Code, Fira Code, Menlo, Consolas, monaco,
+    monospace;
 }
 
 .post-container {
@@ -125,10 +128,10 @@ code {
 }
 
 .post-container h1 {
-  padding:3% 5%;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+  padding: 3% 5%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .post-container p {
@@ -136,26 +139,26 @@ code {
   color: var(--white-text-darker);
 }
 
-.post-container a{
+.post-container a {
   vertical-align: middle;
 }
 
 .post-container i {
-  vertical-align:middle;
+  vertical-align: middle;
   padding: 0% 1%;
 }
 
 i {
-  vertical-align:middle;
+  vertical-align: middle;
   padding: 0% 1%;
 }
 
-.post-info *{
+.post-info * {
   color: var(--white-text-darker);
   font-size: 20px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   line-height: 15px;
 }
 
@@ -173,7 +176,7 @@ i {
   margin: 5% 10%;
 }
 
-.head *{
+.head * {
   display: inline;
   padding: 5%;
 }
@@ -184,11 +187,11 @@ i {
 
 .head .h3 {
   font-size: 30px;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 .intro {
-  display:inline-block;
+  display: inline-block;
   margin-bottom: 4%;
 }
 
@@ -198,13 +201,13 @@ i {
 }
 
 .intro span {
-  display:inline-block;
+  display: inline-block;
 }
 
 .intro h1 {
   margin-left: 10px;
   font-size: 40px;
-  padding:0;
+  padding: 0;
 }
 
 #intro-text-intro {
@@ -229,8 +232,8 @@ img {
 }
 
 table {
-    padding-top: 5%;
-    padding-bottom: 3%;
+  padding-top: 5%;
+  padding-bottom: 3%;
 }
 
 .none {
@@ -253,17 +256,18 @@ table {
     border: 2px solid var(--dark-background-darker);
     background-color: var(--dark-background-darker);
   }
-  .hoverlink{
+  .hoverlink {
     color: var(--dark-text-darker);
   }
-  .post-info *,.post-container p {
+  .post-info *,
+  .post-container p {
     color: var(--dark-text-darker);
   }
 }
 
 @media screen and (max-width: 1150px) {
   #blogginginfo {
-    opacity: 0;
+    display: none;
   }
   #aboutme {
     float: right;
@@ -271,7 +275,7 @@ table {
 }
 
 @media screen and (max-width: 790px) {
-  .head *{
+  .head * {
     padding: 4%;
   }
   .intro {
@@ -280,28 +284,28 @@ table {
   }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width: 700px) {
   h1 {
     font-size: 40px;
   }
   #aboutme {
     font-size: 14px;
   }
-  
-  .head .display_none{
+
+  .head .display_none {
     display: none;
   }
   .intro h1 {
     display: block;
   }
   .post-container .post-intro {
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
   .head * {
     padding: 1%;
   }

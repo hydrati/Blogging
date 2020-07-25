@@ -16,7 +16,8 @@
                 <h1 id="intro-text-intro"></h1>
             </span>
         </span>
-        <p><a href="/?page=home" style="vertical-align: middle;"><i class="material-icons arrow_back" style="vertical-align: middle;"></i>Back</a></p>
+        <p><a href="?page=home" style="vertical-align: middle;"><i class="material-icons arrow_back"
+                    style="vertical-align: middle;"></i>Back</a></p>
         <div id="content">
         </div>
         <footer>
@@ -46,13 +47,12 @@
         document.getElementById("content").innerHTML = settings.content.preview.mdcontent;
         try {
             debugtext.content.title = document.getElementsByTagName("h1")[2].innerHTML;
-            document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main.css'><title> " + document.getElementsByTagName("h1")[2].innerHTML + " -- " + config.theme_config.author + "'s Blog</title>";
+            document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main-min.css'><title> " + document.getElementsByTagName("h1")[2].innerHTML + " -- " + config.theme_config.author + "'s Blog</title>";
         } catch (e) {
-            document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main.css'><title> " + config.theme_config.author + "'s Blog</title>";
-            console.log(e);
+            document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main-min.css'><title> " + config.theme_config.author + "'s Blog</title>";
         }
     }
-    document.getElementById("intro_js").src = settings.themeUrl + "src/intro.js"
+    document.getElementById("intro_js").src = settings.themeUrl + "src/intro-min.js"
     console.log(debugtext);
 </script>
 
