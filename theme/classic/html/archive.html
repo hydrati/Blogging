@@ -20,9 +20,9 @@
             </span>
         </span>
         <ul class="head">
-            <li class="h2"><a href="/?page=home">Home</a></li>
+            <li class="h2"><a href="?page=home">Home</a></li>
             <li class="h1">Archive</li>
-            <li class="h3 display_none"><a href="/?p=About">About</a></li>
+            <li class="h3 display_none"><a href="?p=About">About</a></li>
         </ul>
         <div id="content">
             <div class="post" id="post">
@@ -50,9 +50,9 @@
         document.all[0].innerHTML = "<pre><xmp>" + JSON.stringify(debugtext) + "</xmp></pre>";
         console.log("Debug ON");
     } else {
-        document.getElementById("intro_js").src = settings.themeUrl + "src/archive.js"
+        document.getElementById("intro_js").src = settings.themeUrl + "src/intro-min.js"
         document.getElementById("aboutme").innerHTML = "Copyright " + settings.date.getFullYear() + " <a class='hoverlink' href=" + settings.domain + ">" + config.theme_config.author + "'s Blog. </a>All Rights Reserved.";
-        document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main.css'><title> Home -- " + config.theme_config.author + "'s Blog</title>";
+        document.getElementById("head").innerHTML = "<link rel='stylesheet' href='" + settings.themeUrl + "src/main-min.css'><title> Home -- " + config.theme_config.author + "'s Blog</title>";
     }
     console.log(debugtext);
 </script>
