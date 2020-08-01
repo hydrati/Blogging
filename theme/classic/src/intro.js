@@ -52,6 +52,21 @@ async function init_post_container() {
   }
   return post_container;
 }
+
+function loadcomments() {
+  if (config.comment.enable) {
+    for (x in comment.depend.js) {
+      a = document.createElement("script");
+      a.src = comment.depend.js[x];
+      document.getElementById("jscomments").append(a);
+    }
+    a = document.createElement("script");
+    a.src = settings.domain + "src/js/" + comment.load;
+    a.defer = "defer";
+    document.getElementById("jscomments").append(a);
+  }
+}
+
 add_pic = function () {
   var imgs = document.getElementsByTagName("img");
   for (var i = 0; i < imgs.length; i++) {
@@ -62,5 +77,6 @@ if (getpar("page")) {
   init_post_container().then((content) => {
     document.getElementById("post").innerHTML = content;
   });
+}else{
+  loadcomments();
 }
-add_pic();

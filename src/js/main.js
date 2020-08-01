@@ -30,6 +30,7 @@ if (!getpar("p")) {
   var settings = { par: "p" };
 }
 let t = "/";
+var comment;
 for (let i of window.location.pathname.split("/").slice(1, -1)) {
   t = t + i + "/";
 }
@@ -51,6 +52,7 @@ fetch("config.json")
     settings.themeUrl =
       settings.domain + config.file.theme + config.theme + "/";
     settings.post = settings.domain + config.file.post;
+    for(i in config.comment.config){comment = config.comment.config[i]};
   })
   .then(function () {
     if (settings.par === "url") {
