@@ -77,6 +77,7 @@ if (getpar("page")) {
   init_post_container().then((content) => {
     document.getElementById("post").innerHTML = content;
   });
-}else{
+} else {
   loadcomments();
 }
+document.getElementById("des").content = config.theme_config.introduction;
